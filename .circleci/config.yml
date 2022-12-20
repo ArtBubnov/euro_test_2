@@ -22,8 +22,8 @@ jobs:
           #command: npm install sfdx-cli -g
           #command: sfdx --version
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
 
 workflows:
   #say-hello-workflow:
