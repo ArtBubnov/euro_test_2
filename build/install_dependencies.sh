@@ -1,7 +1,7 @@
 #This installs the sfdx cli
 
-echo "\n\n****   Installing Salesforce CLI   ****\n\n"
+echo "****   Installing Salesforce CLI   ****"
 sudo npm install -global sfdx-cli
 
-echo "\n\n****   Salesforce CLI version check   ****\n\n"
+echo "****   Salesforce CLI version check   ****"
 sudo npm install sfdx --version
