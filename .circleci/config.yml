@@ -14,6 +14,7 @@ jobs:
     docker:
       - image: cimg/node:19.2.0
     steps:
+      - checkout
       - run:
           name: "first test"
           command: npm --version
@@ -23,7 +24,7 @@ jobs:
           #command: sfdx --version
       - run:
           name: "Install Dependencies"
-          command: build/install_dependencies.sh
+          command: . build/install_dependencies.sh
 
 workflows:
   #say-hello-workflow:
