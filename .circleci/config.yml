@@ -25,6 +25,9 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: . build/install_dependencies.sh
+      - run:
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
 
 workflows:
   #say-hello-workflow:
