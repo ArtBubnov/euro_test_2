@@ -23,7 +23,7 @@ jobs:
           #command: sfdx --version
       - run:
           name: "Install Dependencies"
-          command: . build/install_dependencies.sh
+          command: build/install_dependencies.sh
 
 workflows:
   #say-hello-workflow:
