@@ -30,9 +30,7 @@ jobs:
           command: . build/login_to_org.sh
 
 workflows:
-  #say-hello-workflow:
-    #jobs:
-      #- say-hello
+  version: 2
   test-workflow:
     jobs:
       - test
