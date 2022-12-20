@@ -21,6 +21,9 @@ jobs:
           #command: sudo npm install -global sfdx-cli
           #command: npm install sfdx-cli -g
           #command: sfdx --version
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
 
 workflows:
   #say-hello-workflow:
