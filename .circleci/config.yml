@@ -36,7 +36,17 @@ workflows:
   test-workflow:
     jobs:
       - test
-        filters:
-              branches:
-                only:
-                  - main
+          filters:
+            branches:
+              only:
+                - main
+
+
+
+#  build-deploy:
+#    jobs:
+#      - js_build
+#      - build_server_pdfs: # << the job to conditionally run based on the filter-by-branch-name.
+#          filters:
+#            branches:
+#              only: /server\/.*/                  
