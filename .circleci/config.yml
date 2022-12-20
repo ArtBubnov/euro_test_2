@@ -32,11 +32,7 @@ jobs:
 workflows:
   test-workflow:
     jobs:
-      - test:
-          filters:
-            branches:
-              only: 
-				        - main
+      - test
 
 
 
