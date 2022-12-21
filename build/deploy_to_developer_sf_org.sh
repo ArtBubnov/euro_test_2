@@ -17,3 +17,6 @@ pwd
 
 echo "LS test"
 ls
+
+echo "cat test"
+cat force-app/main/default/customMetadata/Trailshred_Setting.Audio_on_Lead_Status_Change.md-meta.xml
