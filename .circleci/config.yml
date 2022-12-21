@@ -16,6 +16,5 @@ workflows:
                     IS_PR=false
                   else
                     IS_PR=true
-                    echo "event is triggered"
                   fi
                   echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
