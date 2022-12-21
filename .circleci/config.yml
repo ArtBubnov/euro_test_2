@@ -18,4 +18,4 @@ workflows:
                     IS_PR=true
                     echo "event is triggered"
                   fi
-                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/project/build/params.json
+                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
