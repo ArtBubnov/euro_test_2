@@ -5,4 +5,4 @@ PATH_FILTER="./"
 BASH_VERSION=`bash --version`
 #UPDATED_FILES=$(git diff --name-only origin/dev force-app)
 echo "What is the diff?"
-echo BASH_VERSION
+echo $BASH_VERSION
