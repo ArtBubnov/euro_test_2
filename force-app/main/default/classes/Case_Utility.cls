@@ -1,4 +1,4 @@
-public with sharing class Case_Utility 
+public with sharing class Case_Utility   
 {
     private static final String HANDLER_NAME = 'Case_Trigger_Handler';
 
