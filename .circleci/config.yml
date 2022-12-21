@@ -1,7 +1,7 @@
 setup: true
 version: 2.1
 orbs:
-  continuation: circleci/continuation@0.2.0
+  continuation: circleci/continuation@0.3.1
 workflows:
   setup:
     jobs:
@@ -23,5 +23,6 @@ workflows:
                   else
                     IS_PR=true
                   fi
-                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
                   echo $IS_PR
+                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
+                  
