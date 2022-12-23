@@ -1,20 +1,27 @@
-setup: true
 version: 2.1
-orbs:
-  continuation: circleci/continuation@0.2.0
+
+
+jobs:
+  developer-deploy:
+    docker:
+      - image: cimg/node:19.2.0
+    steps:
+      - checkout
+      - run:
+          name: "NPM version check"
+          command: npm --version
+      - run:
+          name: "Install Dependencies"
+          command: . build/install_dependencies.sh
+      - run:
+          name: "Salesforce AUTH"
+          command: . build/login_to_org.sh
+
+
 workflows:
-  setup:
+  developer-workflow:
     jobs:
-      - continuation/continue:
-          configuration_path: ".circleci/main.yml"
-          parameters: /home/circleci/params.json
-          pre-steps:
-            - run:
-                command: |
-                  if [ -z "${CIRCLE_PULL_REQUEST##*/}" ]
-                  then
-                    IS_PR=false
-                  else
-                    IS_PR=true
-                  fi
-                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
+      - developer-deploy:
+          filters:
+            branches:
+              only: main
