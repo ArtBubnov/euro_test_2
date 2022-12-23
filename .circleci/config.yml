@@ -15,10 +15,14 @@ workflows:
                   echo ${CIRCLE_PULL_REQUEST##*/}
                   echo $CIRCLE_BRANCH
                   echo "test"
-                  if [ -z "${CIRCLE_PULL_REQUEST##*/}" ]
+                  if [ $CIRCLE_BRANCH <> "main" ]
                   then
-                    IS_PR=false
-                  else
-                    IS_PR=true
-                  fi
-                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
+                    echo "This is main"
+
+
+
+#                    IS_PR=false
+#                  else
+#                    IS_PR=true
+#                  fi
+#                 echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
