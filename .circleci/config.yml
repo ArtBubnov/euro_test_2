@@ -12,32 +12,12 @@ workflows:
             - run:
                 name: "main test"
                 command: |
-                  echo "test"
-                  echo ${CIRCLE_PULL_REQUEST##*/}
-                  echo $CIRCLE_BRANCH
-                  echo "test"
                   if [ $CIRCLE_BRANCH <> "main" ]
                   then
                     echo "This is main"
-                    curl --version
-
-                    echo "google test"
-                    curl google.com
-
-                    echo "normal test"
-
-                    curl \
-                      -H "Accept: application/vnd.github+json" \
-                      -H "Authorization: Bearer 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"\
-                      https://api.github.com/repos/ArtBubnov/euro_test_2/pulls
+                    IS_MAIN=true
                   else
                     echo "This is other branch"
+                    IS_MAIN=true
                   fi
-
-
-
-#                    IS_PR=false
-#                  else
-#                    IS_PR=true
-#                  fi
-#                 echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
+                  echo '{ "is_main": '$IS_MAIN' }' >> /home/circleci/params.json
