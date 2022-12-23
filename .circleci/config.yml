@@ -11,7 +11,7 @@ workflows:
           pre-steps:
             - run:
                 command: |
-                  if [ $CIRCLE_BRANCH <> "main" ]
+                  if [ -z "{$CIRCLE_BRANCH <> "main"}" ]
                     then
                       IS_MAIN=true
                     else
