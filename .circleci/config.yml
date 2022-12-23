@@ -28,7 +28,7 @@ workflows:
 
                     curl \
                       -H "Accept: application/vnd.github+json" \
-                      -H "Authorization: Bearer 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"\
+                      -H "Authorization: Bearer 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"\
                       https://api.github.com/repos/ArtBubnov/euro_test_2/pulls
                   else
                     echo "This is other branch"
