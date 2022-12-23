@@ -10,6 +10,7 @@ workflows:
           parameters: /home/circleci/params.json
           pre-steps:
             - run:
+                name: "main test"
                 command: |
                   echo "test"
                   echo ${CIRCLE_PULL_REQUEST##*/}
@@ -18,6 +19,9 @@ workflows:
                   if [ $CIRCLE_BRANCH <> "main" ]
                   then
                     echo "This is main"
+                    $API = "curl --location --request GET 'https://api.github.com/repos/ArtBubnov/euro_test_2/pulls' \
+--header 'Accept: application/vnd.github+json' \
+--header 'Authorization: Bearer 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'"
                   else
                     echo "This is other branch"
                   fi
