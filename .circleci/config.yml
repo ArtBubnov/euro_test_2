@@ -18,6 +18,9 @@ workflows:
                   if [ $CIRCLE_BRANCH <> "main" ]
                   then
                     echo "This is main"
+                  else
+                    echo "This is other branch"
+                  fi
 
 
 
