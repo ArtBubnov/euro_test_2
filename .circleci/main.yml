@@ -12,8 +12,15 @@ jobs:
     steps:
         - checkout
         - run:
-            name: test
+            name: get list of PR
             command: . build/test.sh
+        - run:
+            name: parce rest api call response\
+            command: . build/parser.js
+
+    
+
+
 
 workflows:
    main-branch-workflow:
