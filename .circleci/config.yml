@@ -1,7 +1,7 @@
 setup: true
 version: 2.1
 orbs:
-  continuation: circleci/continuation@0.3.1
+  continuation: circleci/continuation@0.2.0
 workflows:
   setup:
     jobs:
@@ -10,17 +10,11 @@ workflows:
           parameters: /home/circleci/params.json
           pre-steps:
             - run:
-                name: "main test"
                 command: |
-                  if [ $CIRCLE_BRANCH <> "main" ]
+                  if [ -z "${CIRCLE_PULL_REQUEST##*/}" ]
                   then
-                    echo "This is main"
-                    IS_MAIN=true
+                    IS_PR=false
                   else
-                    echo "This is other branch"
-                    IS_MAIN=true
+                    IS_PR=true
                   fi
-                  echo $IS_MAIN
-
-                  echo '{ "is_main": '$IS_MAIN' }' >> /home/circleci/params.json
-                  echo "Script end"
+                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
