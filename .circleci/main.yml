@@ -1,24 +1,24 @@
 version: 2.1
 
 parameters:
-  is_pr:
+  is_main:
     type: boolean
     default: false
 
 jobs:
-  do_something:
+  on_main_actions:
     docker:
-      - image: cimg/base:2021.04
+      - image: cimg/node:19.2.0
     steps:
+        - checkout
         - run:
-            name: something
-            command: echo 'You get the picture'
+            name: test
+            command: . build/test.sh
 
 workflows:
   version: 2
-
-   whence-pr:
-    when: << pipeline.parameters.is_pr >>
+   main-branch-workflow:
+    when: << pipeline.parameters.is_main >>
     jobs:
-      - do_something:
-            name: something
+      - on_main_actions:
+            name: on_main_actions
