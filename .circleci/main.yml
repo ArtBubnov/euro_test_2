@@ -16,7 +16,6 @@ jobs:
             command: . build/test.sh
 
 workflows:
-  version: 2
    main-branch-workflow:
     jobs:
       - on_main_actions:
