@@ -1,4 +1,5 @@
-echo "test"
+echo "test" > test.json
+cat test.json
 
 curl \
   -H "Accept: application/vnd.github+json" \
