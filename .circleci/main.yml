@@ -15,7 +15,7 @@ jobs:
             name: get list of PR
             command: . build/test.sh
         - run:
-            name: parce rest api call response\
+            name: parce rest api call response
             command: . build/parser.js
 
     
