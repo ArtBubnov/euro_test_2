@@ -27,4 +27,3 @@ workflows:
           filters:
             branches:
               only: main
-              pull_request: true
