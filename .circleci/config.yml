@@ -7,7 +7,9 @@ workflows:
     jobs:
       - continuation/continue:
           configuration_path: ".circleci/main.yml"
-          parameters: /home/circleci/params.json
+          parameters: |
+            /home/circleci/paramsPR.json
+            /home/circleci/params.json
           pre-steps:
             - run:
                 command: |
@@ -17,7 +19,7 @@ workflows:
                   else
                     IS_PR=true
                   fi
-                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/params.json
+                  echo '{ "is_pr": '$IS_PR' }' >> /home/circleci/paramsPR.json
                 
                   if [ -z "{$CIRCLE_BRANCH <> "main"}" ]
                     then
